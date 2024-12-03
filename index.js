@@ -75,7 +75,7 @@ async function run() {
     }
     const postData = JSON.stringify(bomPayload);
 
-    fs.writeFile("postData.txt",postData,function(err) {
+    fs.writeFile("/tmp/postData.txt",postData,function(err) {
     if(err) {
         return console.log(err);
       } else {
