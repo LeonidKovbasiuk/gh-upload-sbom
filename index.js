@@ -71,7 +71,7 @@ async function run() {
     }
 
     if(isLatest){
-      bomPayload.isLatest = isLatest; 
+      bomPayload.isLatestProjectVersion = isLatest; 
     }
     const postData = JSON.stringify(bomPayload);
 
@@ -84,10 +84,10 @@ async function run() {
     //  });
     
     const requestOptions = {
-      method: 'POST',
+      method: 'PUT',
       headers: {
         'X-API-Key': apiKey,
-        'Content-Type': 'multipart/form-data',
+        'Content-Type': 'application/json',
       },
       body: postData
     };
