@@ -74,7 +74,7 @@ async function run() {
       bomPayload.isLatest = isLatest; 
     }
     const postData = JSON.stringify(bomPayload);
-
+    core.info(postData);
     const requestOptions = {
       method: 'PUT',
       headers: {
