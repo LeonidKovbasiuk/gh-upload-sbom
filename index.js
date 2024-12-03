@@ -87,7 +87,7 @@ async function run() {
       method: 'POST',
       headers: {
         'X-API-Key': apiKey,
-        'Content-Type': 'application/json',
+        'Content-Type': 'multipart/form-data',
       },
       body: postData
     };
