@@ -71,20 +71,20 @@ async function run() {
     }
 
     if(isLatest){
-      bomPayload.isLatestProjectVersion = isLatest; 
+      bomPayload.isLatest = isLatest; 
     }
     const postData = JSON.stringify(bomPayload);
 
-    fs.writeFile("/tmp/postData.txt",postData,function(err) {
-    if(err) {
-        return console.log(err);
-      } else {
-        console.log("The file was saved!");
-      }
-     });
+    // fs.writeFile("/tmp/postData.txt",postData,function(err) {
+    // if(err) {
+    //     return console.log(err);
+    //   } else {
+    //     console.log("The file was saved!");
+    //   }
+    //  });
     
     const requestOptions = {
-      method: 'PUT',
+      method: 'POST',
       headers: {
         'X-API-Key': apiKey,
         'Content-Type': 'application/json',
