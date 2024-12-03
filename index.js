@@ -93,7 +93,7 @@ async function run() {
     core.info(`Uploading to Dependency-Track server ${serverHostname}...`);
 
     const response = await fetch(url.toString(), requestOptions);
-    core.info(`Request options: ${requestOptions}`);
+    core.info(`Post data: ${postData}`);
     if (response.ok) {
       core.info('Finished uploading BOM to Dependency-Track server.');
     } else {
