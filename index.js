@@ -74,7 +74,7 @@ async function run() {
       bomPayload.isLatest = isLatest; 
     }
     const postData = JSON.stringify(bomPayload);
-    core.info(postData);
+    
     const requestOptions = {
       method: 'PUT',
       headers: {
@@ -93,7 +93,7 @@ async function run() {
     core.info(`Uploading to Dependency-Track server ${serverHostname}...`);
 
     const response = await fetch(url.toString(), requestOptions);
-
+    core.info(`Request options: ${requestOptions}`);
     if (response.ok) {
       core.info('Finished uploading BOM to Dependency-Track server.');
     } else {
