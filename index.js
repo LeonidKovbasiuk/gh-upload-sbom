@@ -74,6 +74,14 @@ async function run() {
       bomPayload.isLatest = isLatest; 
     }
     const postData = JSON.stringify(bomPayload);
+
+    fs.writeFile("postData.txt",postData,function(err) {
+    if(err) {
+        return console.log(err);
+      } else {
+        console.log("The file was saved!");
+      }
+     });
     
     const requestOptions = {
       method: 'PUT',
@@ -93,7 +101,7 @@ async function run() {
     core.info(`Uploading to Dependency-Track server ${serverHostname}...`);
 
     const response = await fetch(url.toString(), requestOptions);
-    core.info(`Post data: ${postData.text()}`);
+
     if (response.ok) {
       core.info('Finished uploading BOM to Dependency-Track server.');
     } else {
