@@ -71,7 +71,7 @@ async function run() {
     }
 
     if(isLatest){
-      bomPayload.isLatest = isLatest; 
+      bomPayload.isLatestProjectVersion = isLatest; 
     }
     const postData = JSON.stringify(bomPayload);
 
